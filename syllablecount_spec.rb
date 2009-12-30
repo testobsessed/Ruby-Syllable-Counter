@@ -59,7 +59,8 @@ describe "Syllable counter" do
     "aspiring",
     "plaintively",
     "question",
-    "beautiful"
+    "beautiful",
+    "ambitious"
   ]
   
   three_syllable_word_examples.each { |word|
@@ -67,6 +68,17 @@ describe "Syllable counter" do
       word.syllable_count.should equal(3)
     end
   }
+  
+  four_syllable_word_examples = [
+    "continuous"
+  ]
+  
+  four_syllable_word_examples.each { |word|
+    it "knows that '#{word}' has four syllables" do
+      word.syllable_count.should equal(4)
+    end
+  }
+  
   
   it "can count a line from a haiku" do
     "dripping drops of rain".syllable_count.should equal(5)
