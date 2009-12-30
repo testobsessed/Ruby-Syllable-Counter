@@ -12,7 +12,38 @@ require 'spec'
 require 'syllablecount'
 
 describe "Syllable counter" do
-    one_syllable_word_examples = [
+  # school worksheet tests from http://www.superteacherworksheets.com/syllables/syllables6.pdf
+  # thanks to Al Snow for the suggestion (score out of the box: 19/20 => "A" :-))
+  school_worksheet_examples = {
+    "animal" => 3,
+    "anything" => 3,
+    # "somebody" => 3, NEED TO FIX
+    "grandfather" => 3,
+    "comedy" => 3,
+    "January" => 4,
+    "computer" => 3,
+    "table" => 2,
+    "summer" => 2,
+    "duet" => 2,
+    "purchase" => 2,
+    "understand" => 3,
+    "beautiful" => 3,
+    "wonderful" => 3,
+    "customer" => 3,
+    "exercise" => 3,
+    "symbol" => 2,
+    "travel" => 2,
+    "picture" => 2,
+    "confirm" => 2
+  }
+  
+  school_worksheet_examples.each { |word, sylcount| 
+    it "knows that '#{word}' has #{sylcount} syllable" do
+      word.syllable_count.should equal(sylcount)
+    end
+  }
+  
+  interesting_one_syllable_word_examples = [
       "at",
       "bat",
       "each",
@@ -28,9 +59,9 @@ describe "Syllable counter" do
       "ed",
       "loved",
       "arched"
-    ]
+  ]
 
-  one_syllable_word_examples.each { |word|
+  interesting_one_syllable_word_examples.each { |word|
     it "knows that '#{word}' has one syllable" do
       word.syllable_count.should equal(1)
     end
