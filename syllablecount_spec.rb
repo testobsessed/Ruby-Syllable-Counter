@@ -58,7 +58,9 @@ describe "Syllable counter" do
       "dressed",
       "ed",
       "loved",
-      "arched"
+      "arched",
+      "been",
+      "book"
   ]
 
   interesting_one_syllable_word_examples.each { |word|

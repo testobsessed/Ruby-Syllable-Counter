@@ -25,7 +25,7 @@ class String
       processed.gsub!(/ed$/, "")
     end
     #puts "*** 1 #{processed}"
-    processed.gsub!(/iou|eau|ai|au|ay|ea|ei|oa|oi|ou|ui|oy/, "@") #vowel combos
+    processed.gsub!(/iou|eau|ai|au|ay|ea|ee|ei|oa|oi|oo|ou|ui|oy/, "@") #vowel combos
     #puts "*** 2 #{processed}"
     processed.gsub!(/qu|ng|ch|rt|[#{consonants}h]/, "=") #consonant combos
     #puts "*** 3 #{processed}"
